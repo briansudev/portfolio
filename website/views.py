@@ -8,3 +8,9 @@ from website.models import *
 def index(request):
     return render(request, 'website/index.html', {})
 
+def work(request):
+    return render(request, 'website/work.html', {})
+
+def me(request):
+    return render(request, 'website/me.html', {})
+
