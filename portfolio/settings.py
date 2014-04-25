@@ -83,7 +83,9 @@ USE_TZ = True
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+DATABASES['default'] =  dj_database_url.config( \
+        default='postgres://ppfwyxuhovksuw:lUtkYW3Hw3Ch3Qq0bYdcHMzK0j' + \
+        '@ec2-23-23-81-171.compute-1.amazonaws.com:5432/dbruhdejmlesm1')
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
