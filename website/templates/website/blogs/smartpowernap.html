@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="My Blog">
+        <meta name="author" content="Brian Su">
+
+        <title>Brian Su - Blog</title>
+        {% load bootstrap3 %}
+        {% bootstrap_messages %}
+        {% load staticfiles %}
+        {% bootstrap_css %}
+        <link href="{% static "website/css/font-awesome.min.css" %}" rel="stylesheet">
+        <link href="{% static "website/css/styles2.css" %}" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <span id="maintitle" class="color1">
+                        Brian
+                    </span>
+                    <span id="maintitle2" class="color2">
+                        Su
+                </span></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/work"><span class="color1">Work</span></a></li>
+                    <li><a href="#"><span class="color1">Me</span></a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+        </nav>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-8 col-md-offset-2">
+
+                    <!-- blog entry -->
+                    <h1 class="blogtitle">Developer Notes: Smart Power Nap</h1>
+                    <hr>
+                    <p><span class="glyphicon glyphicon-time"></span> Posted on February 9, 2014</p>
+                    <hr>
+                    <div class="text-center">
+                        <img src="{% static "website/img/smartpowernap_icon.jpg" %}" style="height: 140px; width: 140px" class="img-responsive">
+                    </div>
+
+                    <hr>
+                    <p>
+                    <b>Links</b>
+                    </p>
+                    <p><ul>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.brianysu.smartpowernap">Play Store Link</a></li>
+                        <li><a href="https://github.com/briansudev/smartPowerNap">Source Code | Github</a></li>
+                    </ul>
+                    </p>
+                    <p>
+                    <b>Summary</b>
+                    </p>
+                    <p>
+                    Smart Power Nap is designed to allow users to achieve the ideal 20-30 minute power nap. (Studies have shown that taking a
+                    <a href="http://en.wikipedia.org/wiki/Power_nap">power nap</a> during the day can boost alertness and increase performance.)
+                    It uses the accelerometer to measure user activity, like many smart alarm clocks on the app stores, and starts the actual alarm
+                    after it hasn't detected movement after a certain period of time. The app assumes that if lack of movement for a duration of time
+                    means that the user is asleep.
+                    </p>
+                    <p>
+                    <b>The Idea</b>
+                    </p>
+                    <p>
+                    My good friend Roger visited UC Berkeley one cold Thursday morning and I had to wake up earlier than usual to go get him. (10am is very
+                    early for me.) Of course, as I took him around campus I became pretty tired. So, while in the Engineering library, I told Roger, "Wake
+                    me up in 20 minutes after I fall asleep." He replied, "How do I know when you're asleep?" At that moment, I realized that that was a problem
+                    that could be solved with an app. And that was the inspiration for this app. However, I still took a power nap after that eureka moment, albeit without this app.
+                    </p>
+                    <p>
+                    <b>The Development Process</b>
+                    </p>
+                    <p>
+                    My hackathon team, Can, Cem, Alan, Vineet, and Raymond, ended up in need of an idea at HackTech. We lacked much of the technical expertise
+                    that was required to do many of the existing ideas. This was also the result of my adamant desire to use all of the 5 hours worth of Android knowledge I had just obtained from reading through my Android book on the bus. By hour 10 of the hackathon, after exploring a couple more ideas, my team ended up focusing on developing this app.
+                    </p>
+                    <p>
+                    Our first version of the app, the end result of HackTech and around 25 hours of coding, had about 70% of the features that are currently in the app as of this writing. We felt pretty comfortable publishing it on to the Play Store. However, what it lacked was alarming, pun intended. Instead of setting off an alarm that a user would have to dismiss, the app set off a 10 second ringtone that could only be heard in the quietest environment, which explains why Cem overslept his power nap by 3 hours. We kept the logic as simple as possible and only had small bugs with the first release.
+                    </p>
+                    <p>
+                    A week later, I decided that I wanted to revisit this project and re-code this to a more polished and usable app. I rewrote most of the code from scratch, eliminating many useless code that were found in the code we used from the internet at HackTech. During the 80 hours of work I spent during the week working on the app, neglecting my classes and pushing to their homework until the very very last minute, I encountered many annoying bugs that took a while to fix. Some of these bugs are explained below. On Saturday night, when I decided that I really had to publish this app immediately or else face the consequences of extreme procrastination on my other classes, I ended up inserting very nasty and ugly fixes to AlarmAccelerometer.java and Timer.java to eliminate the very annoying problem of infinite alarms and vibrations. There's probably an infinite loop somewhere. I'll fix the temporary bug fixes very soon. Anyways, I decided that the bug fixes were acceptable (for now) and published the app on the Play Store. I did have to take down version 1 of the app, since, for some reason, I signed it with a certificate that only lasted 1 year - meaning: my app will "expire" in 1 year. So, everyone can download the latest version of the app now.
+                    </p>
+                    <p>
+                    <b>Technical Challenges: for the coders</b>
+                    </p>
+                    <p>
+                    <ul>
+                        <li>Dismiss Dialog</li>
+                        <p>The dismiss dialog was surprisingly the most difficult issue to resolve during the rebuild. The first issue was starting an activity
+                        after the alarm ended. I forgot what I tried, but, after an extremely long time, I realized that I had to use a BroadcastReceiver, which
+                        I had actually used in the first place. The next issue involved creating the dialog. The default dialog didn't match well with the app
+                        themes and so I spent a while exploring how to customize the dialog. Turns out that many of the themes for the dialog are private and that you had to copy their settings into the app styles. But, those settings were private too, so I gave up on that method. I ended up inflating the same activity on the main screen and sticking an alert dialog on it. I was hesitant at first, as when you dismiss the alarm, the DissmissDialogActivity closes and you see the view close, exposing another view of that looks exactly the same. But, it works well, at least for now
+                        </p>
+                        <li>Must Wake By</li>
+                        <p>The "Must Wake By" feature allows users to set a time that they must wake by, so that if the app detects that the user hasn't fallen asleep while the activity detection is still running at the must wake time or if the user must wake before the actual alarm finishes, the alarm will ring. At the hackathon, implementing this feature was fairly simple, but, on Saturday night, implementing this feature resulted in an infinite looping AlarmAccelerometer that started its own alarms and then a Timer, which also started its own infinite alarms. I used some nasty temporary bug fixes to resolve this. If you look at AlarmAccelerometer.java and Timer.java, you might see
+                        mShouldStart and mDontStart, which are pretty confusing, even for me.
+                        </p>
+                    </ul>
+                    </p>
+                    <p>
+                    <b>Acknowledgements</b>
+                    </p>
+                    <p>I would like to thank my team: Can, Cem, Alan, Vineet, and Raymond for working with me on this project. Also to Roger, for the inspiration for this project and to all my other friends, who have supported me along the way.
+                    <br>
+                    <br>
+                    Kelly Wong designed the fabulous icon. It's really nice!
+                    </p>
+                    <p>
+                    <b>Possible Controversies</b>
+                    </p>
+                    <p>
+                    <ul>
+                        <li>
+                        I do realize that the body is pretty active during the sleep cycles. I hope this isn't true for the first couple minutes of sleep.
+                        </li>
+                    </ul>
+                    </p>
+                    <p>
+                    Feel free to give me any suggestions!
+                    </p>
+
+
+                    <hr>
+
+
+                    <footer>
+                    <div class="row text-center">
+                        <div class="col-lg-12">
+                            <p>Copyright &copy; Brian Su 2014</p>
+                        </div>
+                    </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <script src="{% static "website/js/jquery-2.0.2.min.js" %}"></script>
+        {% bootstrap_javascript %}
+    </body>
+</html>

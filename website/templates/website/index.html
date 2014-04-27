@@ -1,51 +1,50 @@
 <!DOCTYPE html>
 <html>
-    {% load staticfiles %}
-    <link href="{% static "website/css/styles.css" %}" rel="stylesheet">
-    <!-- {% load bootstrap3 %}
-    {% bootstrap_css %}
-    {% bootstrap_messages %} -->
-    
+
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Brian Su studies Computer Science at UC Berkeley.">
+        <meta name="author" content="Brian Su">
+        <meta name="keywords" content="Brian Su, Brian Y. Su, brianysu, UC Berkeley, CS, EECS, Computer Science, compsci, Brian, Su">
+
+        <title>Brian Su</title>
+        {% load bootstrap3 %}
+        {% load staticfiles %}
+        <link href="{% static "website/css/styles.css" %}" rel="stylesheet">
+
     </head>
     <body>
-        <!-- <div id="main" class="container-fluid col-md-offset-3 col-md-6 text-center">
-            <h1 class="lead">Brian Su</h1>
-            <a href="/work">My Work</a>
-            <br>
-            <a href="/me">Me</a>
-        </div> -->
         <div class="container-main">
             <h3>
-            <div id="maintitle">
+                <div id="maintitle">
 
-            hi, i'm <a href="/me">brian</a>.
-            </div>
+                    hi, i'm <a href="/me">brian</a>.
+                </div>
             </h3>
             <div id="subtitle">
                 <div id="typed">
-                I like to
-                
+                    I like to
+
                 </div>
             </div>
-    </body>
-    
-    <script src="{% static "website/js/jquery-2.0.2.min.js" %}"></script>
-    {% bootstrap_javascript %}
-    <script src="{% static "website/js/typed.js" %}"></script>
-    <script src="{% static "website/js/typed.js" %}"></script>
-    <script>
-      $(function(){
-          $("#typed").typed({
-            strings: ["travel.", "teach.", "code."],
-            // strings: ["First sentence", "Second sentence"],
-            typeSpeed: 10,
-            callback: function() {
-                $("#typed").replaceWith('I like to <a href="/work">code</a>.');
-            },
-          });
-      });
-    </script>
-    
+        </body>
 
-</html>
+        <script src="{% static "website/js/jquery-2.0.2.min.js" %}"></script>
+        {% bootstrap_javascript %}
+        <script src="{% static "website/js/typed.js" %}"></script>
+        <script>
+            $(function(){
+                $("#typed").typed({
+                    strings: ["travel.", "teach.", "code."],
+                    // strings: ["First sentence", "Second sentence"],
+                    typeSpeed: 10,
+                    callback: function() {
+                        $("#typed").replaceWith('I like to <a href="/work">code</a>.');
+                        },
+                        });
+                        });
+                    </script>
+
+
+                </html>

@@ -1,17 +1,173 @@
 <!DOCTYPE html>
 <html>
+    {% load staticfiles %}
     {% load bootstrap3 %}
-    {% bootstrap_css %}
     {% bootstrap_messages %}
-    {% bootstrap_javascript %}
+
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Brian Su studies Computer Science at UC Berkeley.">
+        <meta name="author" content="Brian Su">
+        <meta name="keywords" content="Brian Su, Brian Y. Su, brianysu, UC Berkeley, CS, EECS, Computer Science, compsci, Brian, Su">
+
+        <title>Brian Su - Work</title>
+        {% bootstrap_css %}
+        <link href="{% static "website/css/font-awesome.min.css" %}" rel="stylesheet">
+        <link href="{% static "website/css/styles3.css" %}" rel="stylesheet">
     </head>
     <body>
-        <div id="main" class="container-fluid col-md-offset-3 col-md-6 text-center">
-            <a href="/"><h1 class="lead">Brian Su - My Work</h1></a>
-            <a href="#">My Work</a>
-            <br>
-            <a href="/me">Me</a>
-        </div>
-    </body>
-</html>
+        <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <span id="maintitle" class="color1">
+                        Brian
+                    </span>
+                    <span id="maintitle2" class="color2">
+                        Su
+                </span></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#"><span class="color2">Work</span></a></li>
+                    <li><a href="/me"><span class="color1">Me</span></a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+        </nav>
+
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <h1 class="page-header">Projects
+                    </h1>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-8 col-md-8 col-md-offset-1">
+                    <h3>Smart Power Nap</h3>
+                    <p>An app that uses the accelerometer to determine when the user falls asleep, a prolonged period of inactivity, and then sets an alarm to create the perfect power nap. Read the developer notes for more info.</p>
+                    <a class="btn btn-primary" href="https://github.com/briansudev/smartPowerNap">Github <span class="glyphicon glyphicon-chevron-right"></span></a>
+                    <a class="btn btn-success" href="https://play.google.com/store/apps/details?id=com.brianysu.smartpowernap">Play Store <span class="glyphicon glyphicon-chevron-right"></span></a>
+                    <a class="btn btn-default" href="/blogs/smartpowernap/">Developer Notes<span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+
+            </div>
+
+            <hr>
+            <div class="row">
+
+                <div class="col-lg-8 col-md-8 col-md-offset-1">
+                    <h3>Personal Website</h3>
+                    <h4><i>brianysu.com</i></h4>
+                    <p>Built with love and Django, HTML, CSS, JS.</p>
+                    <a class="btn btn-primary" href="https://github.com/briansudev/portfolio">Github <span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+
+            </div>
+            <hr>
+
+            <div class="row">
+
+                <div class="col-lg-8 col-md-8 col-md-offset-1">
+                    <h3>Graph API</h3>
+                    <p>A graph API that supports undirected and directed graphs, depth-first and breadth-first traversals, and A* variant of Dijkstra's shortest path algorithm. Built with Java.</p>
+                    <h4>Clients</h4>
+                    <p>Makefile - Assembles a makefile given targets, their prerequisites, and a make history</p>
+                    <p>Tripfinder - Outputs a set of directions from A to B given road and location data</p>
+                    <a class="btn btn-primary" href="https://github.com/briansudev/graphAPI">Github <span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row">
+
+                <div class="col-lg-8 col-md-8 col-md-offset-1">
+                    <h3>Hando</h3>
+                    <h4>A web application that unlocks a door.</h4>
+                    <p>Users log in to a website that displays the status of a door (locked/unlocked). By pressing the Lock/Unlock button on the website, the application will signal the hardware to unlock (motor pulling the door handle down) or to lock (motor operating in reverse) the door.</p>
+                    <p>Applications - Cheap Secure Keyless Door Unlock, Lost Key, etc.</p>
+                    <p>Technologies - Python Flask</p>
+                    <p>Built at BearHack 2013. Won Best First Hack Award.</p>
+                    <a class="btn btn-primary" href="https://github.com/gh2o/hando">Github <span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row">
+
+                <div class="col-lg-8 col-md-8 col-md-offset-1">
+                    <h3>Jumping Cubes</h3>
+                    <h4>Featuring an AI that uses minimax with alpha-beta pruning</h4>
+                    <p>A strategic game in which the objective is to conquer all the squares on the board. Given a n x n board with all squares initially white and spotless, red player will add a spot to a white/red square, followed by blue player adding a spot to a blue/white square. Adding a spot to a square will change the square's color to the current player if the square is white. If a square has more spots than it's neighbors, up, down, left, and right, the spots will be reallocated among its neighbors, changing the color of the neighboring squares to that of the original. This process is recursive. Once the board contains squares of only red or blue, the respective player wins.</p>
+                    <p>Users can choose to play against an AI that uses a min-max algorithm with alpha-beta pruning or against other users.</p>
+                    <p>Built with Java.</p>
+                    <a class="btn btn-primary" href="https://github.com/briansudev/jumping_cubes">Github <span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row">
+
+                <div class="col-lg-8 col-md-8 col-md-offset-1">
+                    <h3>LaTex Clone</h3>
+                    <h4>A clone of the raw text formatter that supports many commonly used Tex commands, including endnotes</h4>
+                    <p>Given a file with raw text and \parIndent, \endnote, etc. commands, the program will output a text file based on a given page height, page width, and other specifications with numbered endnotes at the bottom of pages.</p>
+                    <p>Built with Java.</p>
+                    <a class="btn btn-primary" href="https://github.com/briansudev/TeX">Github <span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row">
+
+                <div class="col-lg-8 col-md-8 col-md-offset-1">
+                    <h3>Enigma Machine</h3>
+                    <h4>A clone of the German World War II Encryption machine</h4>
+                    <p>Given a textfile with rotor configurations and text, the program will output a text file with the encoded message. The encryption occurs through a complex process described thorougly in this <a href="http://en.wikipedia.org/wiki/Enigma_machine">wikipedia article</a>. Decryption occurs by using the same configurations and inputting the encoded message.</p>
+                    <p>Built with Java.</p>
+                    <a class="btn btn-primary" href="https://github.com/briansudev/enigma">Github <span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+
+            </div>
+
+
+
+
+
+            <hr>
+            <footer>
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Brian Su 2014</p>
+                </div>
+            </div>
+            </footer>
+        </body>
+        <script src="{% static "website/js/jquery-2.0.2.min.js" %}"></script>
+        {% bootstrap_javascript %}
+    </html>
