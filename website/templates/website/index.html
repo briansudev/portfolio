@@ -11,40 +11,41 @@
         <title>Brian Su</title>
         {% load bootstrap3 %}
         {% load staticfiles %}
-        <link href="{% static "website/css/styles.css" %}" rel="stylesheet">
+        <link href="{% static "website/css/styles.css" %}" rel="stylesheet" >
 
     </head>
     <body>
         <div class="container-main">
             <h3>
-                <div id="maintitle">
+                <span id="maintitle">
 
                     hi, i'm <a href="/me">brian</a>.
-                </div>
+                </span>
             </h3>
-            <div id="subtitle">
-                <div id="typed">
+            <span id="subtitle">
+                <span id="typed">
                     I like to
 
-                </div>
-            </div>
-        </body>
+                </span>
+            </span>
+        </div>
+    </body>
 
-        <script src="{% static "website/js/jquery-2.0.2.min.js" %}"></script>
-        {% bootstrap_javascript %}
-        <script src="{% static "website/js/typed.js" %}"></script>
-        <script>
-            $(function(){
-                $("#typed").typed({
-                    strings: ["travel.", "teach.", "code."],
-                    // strings: ["First sentence", "Second sentence"],
-                    typeSpeed: 10,
-                    callback: function() {
-                        $("#typed").replaceWith('I like to <a href="/work">code</a>.');
-                        },
-                        });
-                        });
-                    </script>
+    <script src="{% static "website/js/jquery-2.0.2.min.js" %}"></script>
+    {% bootstrap_javascript %}
+    <script src="{% static "website/js/typed.js" %}"></script>
+    <script>
+        $(function(){
+            $("#typed").typed({
+                strings: ["travel.", "teach.", "code."],
+                // strings: ["First sentence", "Second sentence"],
+                typeSpeed: 10,
+                callback: function() {
+                    $("#typed").replaceWith('I like to <a href="/work">code</a>.');
+                    },
+                    });
+                    });
+    </script>
 
 
-                </html>
+</html>
