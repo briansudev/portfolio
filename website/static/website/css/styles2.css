@@ -10,7 +10,7 @@ h3 {
 
 
  
-a:link {color:#fff; text-decoration:none;}      /* unvisited link */
+a:link {color:#444; text-decoration:none;}      /* unvisited link */
 a:visited {color:#444;}  /* visited link */
 a:hover {color:#fdb324;}  /* mouse over link */
 a:active {color:#34495e;}  /* selected link */
