@@ -7,6 +7,7 @@ urlpatterns = patterns('',
     url(r'^$', 'website.views.index', name='index'),
     url(r'^me/$', 'website.views.me', name='me'),
     url(r'^work/$', 'website.views.work', name='work'),
+    url(r'^resume/$', 'website.views.resume_html', name="resume_html"),
 
     url(r'^blogs/', include('website.blog_urls')),
 )

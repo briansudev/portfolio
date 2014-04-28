@@ -14,3 +14,6 @@ def work(request):
 def me(request):
     return render(request, 'website/me.html', {})
 
+def resume_html(request):
+	return render(request, 'website/resume.html', {})
+
