@@ -11,21 +11,29 @@
         <title>Brian Su</title>
         {% load bootstrap3 %}
         {% load staticfiles %}
+        {% bootstrap_css %}
         <link href="{% static "website/css/styles.css" %}" rel="stylesheet" >
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+          ga('create', 'UA-47820301-2', 'brianysu.com');
+          ga('send', 'pageview');
+
+        </script>
     </head>
     <body>
-        <div class="container-main">
+        <div class="container-fluid container-main">
             <h3>
                 <div id="maintitle">
-
                     hi, i'm <a href="/me">brian</a>.
                 </div>
             </h3>
             <div id="subtitle">
                 <div id="typed">
                     I like to
-
                 </div>
             </div>
         </div>
