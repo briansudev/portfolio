@@ -1,9 +1,9 @@
 body {
   font-family: 'HelveticaNeue-Light','Open Sans', sans-serif;
   background-color: #white;
-  padding-left: 50px;
-  padding-right: 100px;
   padding-top: 25px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 h3 {
@@ -13,10 +13,10 @@ h3 {
 
 
  
-a:link {color:#444; text-decoration:none;}      /* unvisited link */
-a:visited {color:#444;}  /* visited link */
-a:hover {color:#fdb324;}  /* mouse over link */
-a:active {color:#34495e;}  /* selected link */
+h1 a:link {color:#444; text-decoration:none;}      /* unvisited link */
+h1 a:visited {color:#444;}  /* visited link */
+h1 a:hover {color:#fdb324;}  /* mouse over link */
+h1 a:active {color:#34495e;}  /* selected link */
 
 #backgroundimage {
     /* Set the width dynamically depending on the width of the browser window */
@@ -177,11 +177,13 @@ button:active {
 }
 
 .navbar-default {
+
    padding-top: 20px;
    background-color: transparent;
    background: transparent;
    margin-bottom: 40px;
    border-color: transparent;
+
 }
 
 .navbar li { color: #000 }
