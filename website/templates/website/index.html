@@ -1,19 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+    {% load bootstrap3 %}
+    {% load staticfiles %}
+    <title>Brian Su</title>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Brian Su studies Computer Science at UC Berkeley.">
-        <meta name="author" content="Brian Su">
-        <meta name="keywords" content="Brian Su, Brian Y. Su, brianysu, UC Berkeley, CS, EECS, Computer Science, compsci, Brian, Su">
+    <!-- Bootstrap core CSS -->
+    {% bootstrap_css %}
 
-        <title>Brian Su</title>
-        {% load bootstrap3 %}
-        {% load staticfiles %}
-        {% bootstrap_css %}
-        <link href="{% static "website/css/styles.css" %}" rel="stylesheet" >
-        <script>
+    <!-- Custom styles for this template -->
+    <link href="{% static "website/css/main.css" %}" rel="stylesheet" >
+    
+	<link href="{% static "website/css/font-awesome.min.css" %}" rel="stylesheet">
+    
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -22,38 +37,248 @@
           ga('create', 'UA-47820301-2', 'brianysu.com');
           ga('send', 'pageview');
 
-        </script>
-    </head>
-    <body>
-        <div class="container-fluid container-main">
-            <h3>
-                <div id="maintitle">
-                    hi, i'm <a href="/me">brian</a>.
-                </div>
-            </h3>
-            <div id="subtitle">
-                <div id="typed">
-                    I like to
-                </div>
-            </div>
-        </div>
-    </body>
-
-    <script src="{% static "website/js/jquery-2.0.2.min.js" %}"></script>
-    {% bootstrap_javascript %}
-    <script src="{% static "website/js/typed.js" %}"></script>
-    <script>
-        $(function(){
-            $("#typed").typed({
-                strings: ["travel.", "teach.", "code."],
-                // strings: ["First sentence", "Second sentence"],
-                typeSpeed: 10,
-                callback: function() {
-                    $("#typed").replaceWith('I like to <a href="/work">code</a>.');
-                    },
-                });
-                    });
     </script>
+  </head>
+
+  <body data-spy="scroll" data-offset="0" data-target="#nav">
+
+	<div id="section-topbar">
+		<div id="topbar-inner">
+			<div class="container">
+				<div class="row">
+					<div class="dropdown">
+						<ul id="nav" class="nav">
+							<li class="menu-item"><a class="smoothScroll" href="#headerwrap" title="About"><i class="icon-user"></i></a></li>
+							<li class="menu-item"><a class="smoothScroll" href="#resume" title="Resume"><i class="icon-file"></i></a></li>
+							<li class="menu-item"><a class="smoothScroll" href="#work" title="Works"><i class="icon-briefcase"></i></a></li>
+							<li class="menu-item"><a class="smoothScroll" href="#contact" title="Contact"><i class="icon-envelope"></i></a></li>
+						</ul><!--/ uL#nav -->
+					</div><!-- /.dropdown -->
+
+					<div class="clear"></div>
+				</div><!--/.row -->
+			</div><!--/.container -->
+
+			<div class="clear"></div>
+		</div><!--/ #topbar-inner -->
+	</div><!--/ #section-topbar -->
+	
+	<div id="headerwrap">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-12">
+					<h1>Brian Su</h1>
+					<h3>Teacher | Developer | Explorer</h3>
+				</div><!--/.col-lg-12 -->
+			</div><!--/.row -->
+		</div><!--/.container -->
+	</div><!--/.#headerwrap -->
+	
+
+	<section id="about" name="about"></section>
+	<div id="intro">
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-lg-2 col-lg-offset-1">
+					<h5>ABOUT</h5>
+				</div>
+				<div class="col-lg-6">
+					<p>A full-stack programmer with passion for design and technological innovation. Interested in startups and anything new. Excited about advancements in education and health. Experienced in Android and Django. Willing to learn anything, do everything.</p>
+				</div>
+				<!-- <div class="col-lg-3">
+					<p><a href="#"><i class="icon-file"></i></a> <sm>DOWNLOAD PDF</sm></p>
+				</div> -->
+				
+			</div><!--/.row -->
+		</div><!--/.container -->
+	</div><!--/ #intro -->
 
 
+	<section id="resume" name="resume"></section>
+	<!--EDUCATION DESCRIPTION -->
+	<div class="container desc">
+		<div class="row">
+				<br>
+				<div class="col-lg-2 col-lg-offset-1">
+					<h5>EDUCATION</h5>
+				</div>
+				<div class="col-lg-6">
+					<p><t>B.A. Computer Science</t><br/>
+						<i>University of California, Berkeley</i> <br/>
+						<more>GPA: 3.6 <br/>
+						Officer of UPE - CS Honor Society </more><br/>
+					</p>
+				</div>
+				<div class="col-lg-3">
+					<p><sm>GRADUATING IN MAY 2017</sm><br/>
+					<imp><sm>IN PROGRESS</sm></imp>
+					</p>
+				</div>
+	
+		</div><!--/.row -->
+		<br>
+		<hr>
+	</div><!--/.container -->
+	
+	
+	<!--WORK DESCRIPTION -->
+	<div class="container desc">
+		<div class="row">
+
+				<div class="col-lg-2 col-lg-offset-1">
+					<h5>WORK</h5>
+				</div>
+				<div class="col-lg-6">
+					<p><t>Software Developer Intern</t><br/>
+						VIA Analytics <br/>
+					</p>
+					<p><more>I work with d3.js and Google Maps API to perform data visualizations on transit data and have deployed my work to transit operator customers. </more></p>
+				</div>
+				<div class="col-lg-3">
+					<p><sm>MAY 2014 - CURRENT</sm></p>
+				</div>
+	
+				<div class="col-lg-6 col-lg-offset-3">
+					<p><t>CS61BL Reader</t><br/>
+						University of California, Berkeley <br/>
+					</p>
+					<p><more>I grade assignments for the Data Structures course taught at Berkeley.</more></p>
+				</div>
+				<div class="col-lg-3">
+					<p><sm>JUNE 2014 - CURRENT</sm></p>
+				</div>
+
+				<div class="col-lg-6 col-lg-offset-3">
+					<p><t>UPE IT Committee Chair</t><br/>
+						University of California, Berkeley <br/>
+					</p>
+					<p><more>I currently lead a team tasked with rebuilding our outdated <a href="http://upe.berkeley.edu">website</a> from scratch using Django. I am also in charge of maintaining the honor society's servers and mailing lists.</more></p>
+				</div>
+				<div class="col-lg-3">
+					<p><sm>MAY 2014 - CURRENT</sm></p>
+				</div>
+
+		</div><!--/.row -->
+		<br>
+		<hr>
+	</div><!--/.container -->
+
+
+	<!--AWARDS DESCRIPTION -->
+	<div class="container desc">
+		<div class="row">
+				<div class="col-lg-2 col-lg-offset-1">
+					<h5>AWARDS</h5>
+				</div>
+				<div class="col-lg-6">
+					<p><t>UC Berkeley Leadership Award</t><br/>
+					</p>
+				</div>
+				<div class="col-lg-3">
+					<p><sm>2013</sm></p>
+				</div>
+	
+				<div class="col-lg-6 col-lg-offset-3">
+					<p><t>National Merit Finalist</t><br/>
+					</p>
+				</div>
+				<div class="col-lg-3">
+					<p><sm>2013</sm></p>
+				</div>
+		
+		</div><!--/.row -->
+		<br>
+	</div><!--/.container -->
+
+
+
+
+	<section id="work" name="work"></section>
+	<!--PORTFOLIO DESCRIPTION -->
+	<div id="skillswrap">
+	<div class="container desc">
+		<div class="row">
+				<div class="col-lg-2 col-lg-offset-1">
+					<h5>PORTFOLIO</h5>
+				</div>
+				<div class="col-lg-6">
+					<p><img class="img-responsive" src="{% static "website/img/calapcredits.jpg" %}" alt=""></p>
+				</div>
+				<div class="col-lg-3">
+					<p>CAL AP CREDITS</p>
+				<p><more>A website that lets Cal students calculate the number of units they earned and what requirements they fulfilled with their AP classes taken in high school.<br/><br/>
+					<sm><i class="icon-tag"></i> Django, HTML/CSS/JS</sm></more> 
+				</p>
+				</div>
+	
+				<div class="col-lg-6 col-lg-offset-3">
+					<p><img class="img-responsive center" src="{% static "website/img/spn.png" %}" alt=""></p>
+				</div>
+				<div class="col-lg-3">
+						<p>SMART POWER NAP</p>
+					<p><more>An Android application that initializes a power nap alarm only when it determines that a user has fallen asleep. The app uses the accelerometer to measure user movement and, once user movement has remained below a calibrated threshold for a set amount of time, the app will start the countdown for the alarm.<br/><br/>
+						<sm><i class="icon-tag"></i> Android</sm></more> 
+					</p>
+				</div>
+				
+				<div class="col-lg-6 col-lg-offset-3">
+					<p><img class="img-responsive" src="{% static "website/img/upewebsite.jpg" %}" alt=""></p>
+				</div>
+				<div class="col-lg-3">
+						<p>UPE WEBSITE</p>
+					<p><more>Cal's honor society website completely rebuilt from the ground up.<br/><br/>
+						<sm><i class="icon-tag"></i> Django, HTML/CSS/JS</sm></more> 
+					</p>
+				</div>
+		
+		</div><!--/.row -->
+		<br>
+		<br>
+	</div><!--/.container -->
+	</div>
+
+
+	<section id="contact" name="contact"></section>
+	<!--FOOTER DESCRIPTION -->
+	<div id="footwrap">
+		<div class="container">
+			<div class="row">
+			
+				<div class="col-lg-2 col-lg-offset-1">
+					<h5>CONTACT</h5>
+				</div>
+				<div class="col-lg-6">
+					<p><t>Email</t><br/>
+						brian@brianysu.com <br/>
+					</p>
+				</div>
+				<div class="col-lg-3">
+					<br/>
+					<p>
+						<a href="http://www.linkedin.com/in/briansudev/"><i class="icon-linkedin icon-2x"></i></a>    
+						<a href="http://www.github.com/briansudev"><i class="icon-github icon-2x"></i></a>
+
+					</p>
+				</div>
+			</div><!--/.row -->
+		</div><!--/.container -->
+	</div><!--/ #footer -->
+	
+	<div id="c">
+		<div class="container">
+			<p>By Brian Su</p>
+		
+		</div>
+	</div>
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static "website/js/jquery-2.0.2.min.js" %}"></script>
+    <script src="{% static "website/js/smoothscroll.js" %}"></script>
+    <script src="{% static "website/js/Chart.js" %}"></script>
+    {% bootstrap_javascript %}
+  </body>
 </html>
